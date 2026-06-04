@@ -1,6 +1,9 @@
+import tkinter as tk
 
-# 結構分為「主選單」「遊戲函式」「main 入口」結構化，好擴充
 
+
+
+# 結構分為「主選單」「遊戲函式」結構化，好擴充
 def play_game():
 
     ANS = "2002/08/01"
@@ -31,12 +34,39 @@ def play_game():
     return 0
 
 
-
 def main():
- 
-    print("Anh Kun, Muốn đi chơi không?")
+    '''
+    螢幕多大？ → screen_width / screen_height
+    視窗要多大？ → width / height
+    怎麼讓視窗置中？ → 用螢幕大小減掉視窗大小，再除以 2
     
 
+    X位置 = (螢幕寬度 - 視窗寬度) / 2
+    Y位置 = (螢幕高度 - 視窗高度) / 2
+    '''
+    
+
+    root = tk.Tk()
+    root.title("Gussing game")
+    
+    # 
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+
+    # 我指定的軟體視窗大小
+    window_width = 600
+    window_height = 400
+
+    left = int((screen_width - window_width) / 2)
+    top = int((screen_height - window_height) / 2)
+
+    root.geometry(f'{window_width}x{window_height}+{left}+{top}')
+    
+    
+    
+
+    print("Anh Kun, Muốn đi chơi không?")
+    
     while True:
         print("1.玩")
         print("2.不玩離開")
