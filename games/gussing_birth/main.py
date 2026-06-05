@@ -35,21 +35,10 @@ def play_game():
 
 
 def main():
-    '''
-    螢幕多大？ → screen_width / screen_height
-    視窗要多大？ → width / height
-    怎麼讓視窗置中？ → 用螢幕大小減掉視窗大小，再除以 2
-    
-
-    X位置 = (螢幕寬度 - 視窗寬度) / 2
-    Y位置 = (螢幕高度 - 視窗高度) / 2
-    '''
-    
-
     root = tk.Tk()
     root.title("Gussing game")
     
-    # 
+    # tk方法，取得螢幕大小
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
 
@@ -57,15 +46,13 @@ def main():
     window_width = 600
     window_height = 400
 
+    # 為了置中，給分給左右、上下相同大小。
     left = int((screen_width - window_width) / 2)
     top = int((screen_height - window_height) / 2)
 
     root.geometry(f'{window_width}x{window_height}+{left}+{top}')
     
-    
-    
 
-    print("Anh Kun, Muốn đi chơi không?")
     
     while True:
         print("1.玩")
