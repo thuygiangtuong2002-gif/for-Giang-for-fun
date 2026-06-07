@@ -9,9 +9,11 @@ def play_game():
     ANS = "2002/08/01"
     MAX_TRIES = 3   
     
-    print("您好，進入猜生日遊戲")
-    
+    print("")
+    mylabel = tk.Label(root, text='您好，進入猜生日遊戲')
+    mylabel.pack()
 
+    '''
     for i in range(MAX_TRIES):
         print(f"請問Thùy Giang的生日是多少？你有{MAX_TRIES-i}次機會可以猜喔")
         
@@ -30,7 +32,8 @@ def play_game():
         print(f"真可惜，答案是{ANS}")
 
 
-
+    '''
+    
     return 0
 
 
@@ -52,8 +55,21 @@ def main():
 
     root.geometry(f'{window_width}x{window_height}+{left}+{top}')
     
+    btn = tk.Button(root,
+                text='我是按鈕',
+                font=('Arial',30,'bold'),
+                padx=10,
+                pady=10,
+                activeforeground='#f00'
+                command = play_game
+              )
+    btn.pack()
 
-    
+                                   
+
+    root.mainloop()
+
+    '''
     while True:
         print("1.玩")
         print("2.不玩離開")
@@ -69,7 +85,8 @@ def main():
         
     
     print("很棒！期待下次的遊戲喔")
-
+    
+    '''
 
 main()
 
